@@ -1,0 +1,24 @@
+
+version: '3'
+services:
+  backend:
+    build: ./backend  # Ruta al Dockerfile de Django
+    ports:
+      - "8000:8000"  # Exponiendo el puerto 8000 del contenedor
+    volumes:
+      - ./backend:/app  # Mapea la carpeta local al contenedor
+    environment:
+      - DEBUG=1  # Activa el modo debug de Django
+    command: >
+      sh -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"  # Ejecuta las migraciones antes de iniciar Django
+    restart: always  # Reinicia automáticamente en caso de fallo
+
+  # frontend:
+  #   build: ./frontend  # Ruta al Dockerfile de React
+  #   ports:
+  #     - "3000:3000"  # Exponiendo el puerto 3000 para React
+  #   volumes:
+  #     - ./frontend:/app  # Mapea la carpeta local al contenedor
+  #   depends_on:
+  #     - backend  # Asegura que el backend esté disponible
+  #   restart: always  # Reinicia automáticamente en caso de fallo

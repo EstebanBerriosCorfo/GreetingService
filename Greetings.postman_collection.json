@@ -1,0 +1,466 @@
+{
+	"info": {
+		"_postman_id": "0996c995-59ae-450d-8ca2-0bdc8e2390b2",
+		"name": "Greetings",
+		"description": "El siguiente contrato de APIs muestra el comportamiento de los diversos endpoints que consumen servicios Rest asociados al mantenedor de \"Saludos\". Ejercicio a petición de Chrístopher Enriquez.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39266444"
+	},
+	"item": [
+		{
+			"name": "ListarSaludos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/greeting/greetings/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"greeting",
+						"greetings",
+						""
+					]
+				},
+				"description": "**Método HTTP:** `GET`\n\n**URL:** `http://127.0.0.1:8000/greeting/greetings/`\n\n**Descripción:**  \nEste endpoint permite obtener una lista de todos los saludos que han sido creados en el sistema. Cada saludo incluye un `ID` único y un `message`, que es el contenido del saludo.\n\n#### **Funcionalidad:**\n\nEste endpoint es útil para recuperar todos los saludos disponibles en el mantenedor de saludos. Se utiliza comúnmente cuando se necesita mostrar todos los registros de saludos almacenados en la base de datos."
+			},
+			"response": [
+				{
+					"name": "ListarSaludos",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/greeting/greetings/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"greeting",
+								"greetings",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 24 Oct 2024 17:48:04 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.12.4"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "112"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"message\": \"Buenos días señor\"\n    },\n    {\n        \"id\": 2,\n        \"message\": \"Buenas tardes\"\n    },\n    {\n        \"id\": 3,\n        \"message\": \"Buenas noches\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "CrearSaludo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"message\": \"Buena suerte\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/greeting/greetings/create/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"greeting",
+						"greetings",
+						"create",
+						""
+					]
+				},
+				"description": "Este endpoint permite la creación de saludos."
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"message\": \"Buena suerte\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/greeting/greetings/create/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"greeting",
+								"greetings",
+								"create",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 24 Oct 2024 17:48:23 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.12.4"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "OPTIONS, POST"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "33"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 5,\n    \"message\": \"Buena suerte\"\n}"
+				}
+			]
+		},
+		{
+			"name": "ModificarSaludo",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"message\": \"Buenos días\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/greeting/greetings/1/update/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"greeting",
+						"greetings",
+						"1",
+						"update",
+						""
+					]
+				},
+				"description": "**Método HTTP:** `PUT`\n\n**URL:** `http://127.0.0.1:8000/greeting/greetings//update/`\n\n**Descripción:**  \nEste endpoint permite modificar un saludo existente en el sistema. Utiliza el método **PUT** para reemplazar completamente el mensaje de un saludo identificado por su `ID` (). Se debe proporcionar el nuevo valor para el campo `message` en la solicitud.\n\n#### **Funcionalidad:**\n\nEl endpoint requiere que se especifique el `ID` del saludo a modificar en la URL, y luego se debe enviar un objeto JSON con el nuevo valor del mensaje. El saludo correspondiente será actualizado con la información proporcionada en el cuerpo de la solicitud."
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"message\": \"Buenos días\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/greeting/greetings/1/update/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"greeting",
+								"greetings",
+								"1",
+								"update",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 24 Oct 2024 17:49:01 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.12.4"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "PUT, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "33"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"message\": \"Buenos días\"\n}"
+				}
+			]
+		},
+		{
+			"name": "VerSaludoPorId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/greeting/greetings/2/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"greeting",
+						"greetings",
+						"2",
+						""
+					]
+				},
+				"description": "**Método HTTP:** `GET`\n\n**URL:** `http://127.0.0.1:8000/greeting/greetings//`\n\n**Descripción:**  \nEste endpoint permite obtener la información de un saludo específico a partir de su `ID`. El usuario debe proporcionar el `ID` del saludo en la URL para recibir los detalles de ese saludo en particular.\n\n#### **Funcionalidad:**\n\nEl endpoint recibe un `ID` en la URL y devuelve los detalles del saludo asociado a ese `ID`, incluyendo su mensaje."
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/greeting/greetings/2/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"greeting",
+								"greetings",
+								"2",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 24 Oct 2024 17:47:52 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.12.4"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "34"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 2,\n    \"message\": \"Buenas tardes\"\n}"
+				}
+			]
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/greeting/greetings/4/delete/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"greeting",
+						"greetings",
+						"4",
+						"delete",
+						""
+					]
+				},
+				"description": "**Método HTTP:** `DELETE`\n\n**URL:** `http://127.0.0.1:8000/greeting/greetings//delete/`\n\n**Descripción:**  \nEste endpoint permite eliminar un saludo específico del sistema basado en su `ID`. El usuario debe proporcionar el `ID` del saludo en la URL, y el sistema lo eliminará permanentemente de la base de datos.\n\n#### **Funcionalidad:**\n\nEl endpoint elimina el saludo cuyo `ID` es especificado en la URL. Si el saludo no existe, devolverá un error `404 Not Found`. Si la eliminación es exitosa, devolverá una respuesta vacía con un código de estado `204 No Content`."
+			},
+			"response": []
+		}
+	]
+}
